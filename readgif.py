@@ -36,7 +36,8 @@ class ReadGif:
 
 r = ReadGif()
 
-path = r'F:\迅雷下载\图片\gif'
+# path = r'F:\娱乐\图'
+path = r'F:\娱乐\福利GIF压缩文件'
 # 由于图片所在的目录不在当前目录，因此我们需要告诉pyglet去哪里找到它们：
 pyglet.resource.path=[path]
 pyglet.resource.reindex()
@@ -45,3 +46,4 @@ for file in os.listdir(path):
     if file.endswith(".gif"):
         r.read(file)
         r.run()
+        print('---------')
