@@ -91,6 +91,12 @@ class LoadingGifWin(QWidget):
         for file in os.listdir(self.root_path):
             if file.endswith(".gif"):
                 self.files.append(file)
+            elif file.endswith(".jpg"):
+                j2g = file[0:-4] + '.gif'
+                old = os.path.join(self.root_path, file)
+                new = os.path.join(self.root_path, j2g)
+                shutil.move(old, new)
+                self.files.append(j2g)
         self.show_pic(self.file_num)
 
     def next_onclick(self):
